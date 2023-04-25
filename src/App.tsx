@@ -1,5 +1,5 @@
 // 1.- librerias
-import { Suspense, useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { useDispatch, useSelector } from "react-redux";
 
@@ -12,6 +12,8 @@ import { themeLight, themeDark } from './theme/theme';
 
 // 4.- components
 import Spinner from "./layauts/spinner/Spinner";
+
+const Navbar = lazy(async () => await import('./main/navbar'));
 
 const GlobalStyle = createGlobalStyle`
 	body {
@@ -39,7 +41,7 @@ function App(): JSX.Element {
         <GlobalStyle />
 
         <ThemeProvider theme={isDark ? themeDark : themeLight}>
-            <div>App</div>
+            <Navbar />
         </ThemeProvider>
     </Suspense>;
 }
