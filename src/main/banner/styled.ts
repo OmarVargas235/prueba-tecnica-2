@@ -58,9 +58,9 @@ export const ContainerMessage = styled.div`
     }
 `;
 
-export const ButtonIcon = styled.div`
+export const ButtonIcon = styled.div<{ matches: boolean; }>`
     bottom: 22%;
-    left: 75%;
+    left: ${props => props.matches ? '75%' : 'calc(50% - 61px)'};
     background-color: white;
     color: #7F7F7F;
     border-radius: 20px;
@@ -82,5 +82,13 @@ export const ButtonIcon = styled.div`
             width: 30px;
             height: 30px;
         }
+    }
+
+    @media (max-width: 991px) {
+        bottom: 18%;
+    }
+
+    @media (max-width: 660px) {
+        bottom: ${props => props.matches ? '15%' : '22%'};
     }
 `;
