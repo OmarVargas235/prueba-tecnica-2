@@ -20,7 +20,7 @@ const NavbarPage = ({ setIsOpen }: Props): JSX.Element => {
     
     const matches = useMediaQuery('(min-width: 991px)');
 
-    return <Container className="py-3 d-flex justify-content-between">
+    return <Container className={`py-3 d-flex justify-content-${!matches ? 'between' : 'center'}`}>
         {
             !matches ? <Logo className='logo' /> : null
         }
