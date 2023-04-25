@@ -16,6 +16,12 @@ export const Container = styled.nav`
             padding: 5px !important;
         }
     }
+
+    .icon {
+        width: 40px;
+        fill: white;
+        transform: rotateZ(150deg);
+    }
 `;
 
 export const ContainerText = styled.div`
@@ -40,5 +46,32 @@ export const ContainerIcon = styled.div`
     svg {
         width: 20px;
         fill: #002D63;
+    }
+`;
+
+export const Menu = styled.div`
+    background-color: #204D83;
+    width: 30%;
+    min-height: 100vh;
+    position: fixed;
+    right: 0;
+
+    .btn {
+        @media (max-width: 500px) {
+            font-size: 13px;
+            padding: 4px !important;
+        }
+    }
+
+    @media (max-width: 600px) {
+        width: 37%;
+    }
+
+    @media (max-width: 425px) {
+        width: 45%;
+    }
+
+    @media (max-width: 340px) {
+        width: 55%;
     }
 `;

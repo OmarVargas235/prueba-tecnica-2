@@ -1,46 +1,50 @@
 
 // 2.- componets
-import { Text } from '../../../layauts/Text';
-import Button from '../../../layauts/button/Button';
+import OptionsPage from './OptionsPage';
 
 // 3.- estilos
-import { Container, ContainerIcon, ContainerText } from "../styled";
+import { Container } from "../styled";
 
 // 4.- iconos
 import { ReactComponent as Logo } from '../../../assets/icons/logo.svg';
-import { ReactComponent as Instagram } from '../../../assets/icons/instagram.svg';
-import { ReactComponent as Facebook } from '../../../assets/icons/facebook.svg';
+import { ReactComponent as Hamburger } from '../../../assets/icons/hamburger.svg';
 
-const NavbarPage = (): JSX.Element => {
+// 4.- hooks
+import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
-    return <Container className="py-3">
+interface Props {
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavbarPage = ({ setIsOpen }: Props): JSX.Element => {
+    
+    const matches = useMediaQuery('(min-width: 991px)');
+
+    return <Container className="py-3 d-flex justify-content-between">
+        {
+            !matches ? <Logo className='logo' /> : null
+        }
+
         <div className='d-flex justify-content-center align-items-center'>
-            <Logo className='logo mr-lg-5' />
-
-            <ContainerText className='d-flex justify-content-center align-items-center ml-lg-5'>
-                <Text className='mr-4'>Home</Text>
-                <Text className='mr-4'>The crew</Text>
-                <Text className='mr-4'>Events</Text>
-                <Text className='mr-4'>{"What's new"}</Text>
-                <Text className='mr-4'>Virtual office</Text>
-                <Text className='mr-4'>Contact</Text>
-            </ContainerText>
-            
-            <div className='d-flex justify-content-center align-items-center'>
-                <Button
-                    color='#5AD3DF'
-                    classes='btn'
-                >Maria Reina Parish</Button>
-            </div>
-
-            <ContainerIcon className='ml-4'>
-                <Instagram />
-            </ContainerIcon>
-
-            <ContainerIcon className='ml-2 mr-4'>
-                <Facebook />
-            </ContainerIcon>
+            {
+                matches
+                ?
+                    <>
+                        <Logo className='logo mr-5' />
+                        <OptionsPage />
+                    </>
+                : null
+            }
         </div>
+
+        {
+            !matches
+            ? <Hamburger
+                className='icon mr-3 pointer'
+                onClick={() => setIsOpen((v: boolean) => !v)}
+            />
+            : null
+        }
     </Container>
 }
 

@@ -1,8 +1,16 @@
+
+// 2.- components
 import NavbarPage from "../components/NavbarPage";
 
-const Navbar = (): JSX.Element => {
+interface Props {
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-    return <NavbarPage />;
+const Navbar = ({ setIsOpen }: Props): JSX.Element => {
+
+    return <NavbarPage
+        setIsOpen={setIsOpen}
+    />;
 }
 
 export default Navbar;
