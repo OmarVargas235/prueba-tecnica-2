@@ -15,6 +15,7 @@ import Spinner from "./layauts/spinner/Spinner";
 
 const Navbar = lazy(async () => await import('./main/navbar'));
 const Banner = lazy(async () => await import('./main/banner'));
+const Events = lazy(async () => await import('./main/events'));
 
 const GlobalStyle = createGlobalStyle`
 	body {
@@ -44,6 +45,7 @@ function App(): JSX.Element {
         <ThemeProvider theme={isDark ? themeDark : themeLight}>
             <Navbar />
             <Banner />
+            <Events />
         </ThemeProvider>
     </Suspense>;
 }
