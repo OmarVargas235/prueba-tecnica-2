@@ -17,6 +17,7 @@ const Navbar = lazy(async () => await import('./main/navbar'));
 const Banner = lazy(async () => await import('./main/banner'));
 const Events = lazy(async () => await import('./main/events'));
 const Crew = lazy(async () => await import('./main/crew'));
+const Whatsnew = lazy(async () => await import('./main/whatsnew'));
 
 const GlobalStyle = createGlobalStyle`
 	body {
@@ -48,6 +49,7 @@ function App(): JSX.Element {
             <Banner />
             <Events />
             <Crew />
+            <Whatsnew />
         </ThemeProvider>
     </Suspense>;
 }
