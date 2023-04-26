@@ -17,7 +17,7 @@ const styles = (): string => `
     padding: 12px;
     display: inline-block;
     border: 1px solid #EDECEC;
-    border-radius: 3px;
+    border-radius: 30px;
     box-sizing: border-box;
     outline: none;
     transition: border .1s ease-in-out;

@@ -84,7 +84,7 @@ const TextField = ({
 						value={value}
 						readOnly={isReadOnly}
 						rows={4}
-						className='w-100'
+						className={`w-100 ${classesInput}`}
 						autoComplete={autocomplete}
 						maxLength={maxLength}
 					></Textarea>
