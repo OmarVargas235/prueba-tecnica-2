@@ -19,6 +19,7 @@ const Events = lazy(async () => await import('./main/events'));
 const Crew = lazy(async () => await import('./main/crew'));
 const Whatsnew = lazy(async () => await import('./main/whatsnew'));
 const Memories = lazy(async () => await import('./main/memories'));
+const Sountrack = lazy(async () => await import('./main/sountrack'));
 
 const GlobalStyle = createGlobalStyle`
 	body {
@@ -52,6 +53,7 @@ function App(): JSX.Element {
             <Crew />
             <Whatsnew />
             <Memories />
+            <Sountrack />
         </ThemeProvider>
     </Suspense>;
 }
