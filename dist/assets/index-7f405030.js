@@ -1,0 +1,10 @@
+import{s as c,a as e,j as n,r as i,f as m}from"./index-2133b08c.js";import{T as r}from"./Text-d4918cc2.js";import{T as t}from"./TextField-95323aa6.js";import{B as d}from"./Button-2af1cf71.js";import{u as h,a as p}from"./useScrollTo-1fa37090.js";const u=c.form``,x=({children:a,handleSubmit:s,onSubmit:l,className:o=""})=>e(u,{onSubmit:s(l),className:o,children:a}),f=c.section`
+    .bg {
+        background-color: #F5F5F5;
+        border-radius: 40px;
+    }
+
+    img {
+        width: 100%;
+    }
+`,g="/assets/online-communication-063ae903.png",b=({onSubmit:a,sectionRef:s})=>e(f,{className:"mt-5 px-5",ref:s,children:n("div",{className:"bg row px-1 px-sm-5 py-4 py-sm-5 d-flex justify-content-center align-items-center",children:[n("div",{className:"col-12 col-md-6 order-1 order-md-0",children:[n("div",{className:"d-flex",children:[e(r,{color:"#295D8F",size:"50px",weight:"600",children:"Join"}),e(r,{color:"#FF7E54",size:"50px",weight:"bold",className:"ml-2",children:"us."})]}),e(r,{color:"#6A8D8B",size:"14px",weight:"600",children:"Anim ea dolor culpa ea reprehenderit tempor laboris Lorem aliquip proident tempor non esse."}),n(x,{onSubmit:a,handleSubmit:()=>{},className:"my-4",children:[e(t,{name:"fullname",handleChange:()=>{},value:"",placeholder:"Full Name",classesInput:"text-center",classes:"mb-2"}),e(t,{name:"email",handleChange:()=>{},value:"",placeholder:"Email Address",classesInput:"text-center",classes:"mb-2"}),e(t,{name:"callPhone",handleChange:()=>{},value:"",placeholder:"Call Phone Number",classesInput:"text-center",classes:"mb-2"}),e(t,{type:"textarea",name:"message",handleChange:()=>{},handleChangeTextarea:()=>{},value:"",placeholder:"Message",classesInput:"text-center",classes:"mb-2"}),e("div",{className:"w-100 d-flex justify-content-center mt-4",children:e(d,{classes:"px-5",children:"sent"})})]})]}),e("div",{className:"col-12 col-md-6 order-md-0 mb-4 mb-md-0",children:e("img",{src:g,alt:"onlineCommunication"})})]})}),C=()=>{const a=h(),{n:s,sectionRef:l}=p();i.useEffect(()=>{a(m(s))},[s]);async function o(F){}return e(b,{onSubmit:o,sectionRef:l})},j=()=>e(C,{});export{j as default};
