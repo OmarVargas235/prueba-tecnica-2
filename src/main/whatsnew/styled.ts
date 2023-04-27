@@ -60,4 +60,15 @@ export const Date = styled.div`
     border-bottom-right-radius: 10px;
     top: 0;
     left: 15%;
+
+    @media (max-width: 375px) {
+        p {
+            font-size: 16px;
+        }
+
+        &.py-3 {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+    }
 `;

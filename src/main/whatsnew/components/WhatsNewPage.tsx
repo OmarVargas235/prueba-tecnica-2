@@ -13,9 +13,16 @@ import { ReactComponent as LogoOrange } from '../../../assets/icons/logo_orange.
 // 5.- utils
 import { contentCards } from "../utils";
 
-const WhatsNewPage = (): JSX.Element => {
+interface Props {
+    sectionRef:  React.MutableRefObject<HTMLDivElement | null>;
+}
 
-    return <Container className="p-5 position-relative">
+const WhatsNewPage = ({ sectionRef }: Props): JSX.Element => {
+
+    return <Container
+        className="p-5 position-relative"
+        ref={sectionRef}
+    >
         <div className="w-100 text-center mb-5">
             <LogoOrange />
             

@@ -17,12 +17,19 @@ import img4 from '../../../assets/images/img4.jpg';
 // 5.- hooks
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
-const EventsPage = (): JSX.Element => {
+interface Props {
+    sectionRef:  React.MutableRefObject<HTMLDivElement | null>;
+}
+
+const EventsPage = ({ sectionRef }: Props): JSX.Element => {
 
     const matches = useMediaQuery('(max-width: 576px)');
     const matches2 = useMediaQuery('(max-width: 992px)');
 
-    return <Container className="pt-5 px-5 position-relative">
+    return <Container
+        className="pt-5 px-5 position-relative"
+        ref={sectionRef}
+    >
         {
             matches ? null : <Mask className="position-absolute"></Mask>
         }

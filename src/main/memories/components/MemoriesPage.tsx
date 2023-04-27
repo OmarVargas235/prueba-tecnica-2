@@ -10,9 +10,16 @@ import { Container } from "../styled";
 // 4.- assets
 import { ReactComponent as LogoOrange } from '../../../assets/icons/logo_orange.svg';
 
-const MemoriesPage = (): JSX.Element => {
+interface Props {
+    sectionRef:  React.MutableRefObject<HTMLDivElement | null>;
+}
 
-    return <Container className="pt-5 pb-2 px-5">
+const MemoriesPage = ({ sectionRef }: Props): JSX.Element => {
+
+    return <Container
+        className="pt-5 pb-2 px-5"
+        ref={sectionRef}
+    >
 
         <div className="py-5"></div>
 

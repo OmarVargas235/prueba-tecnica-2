@@ -1,16 +1,8 @@
 // 1.- librerias
-import { Suspense, lazy, useEffect } from "react";
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { useDispatch, useSelector } from "react-redux";
+import { Suspense, lazy } from "react";
+import { createGlobalStyle } from 'styled-components';
 
-// 2.- redux
-import { setActiveDark, IInitState } from './redux/reducers/reducerTheme';
-import { RootState } from './redux/store';
-
-// 3.- theme
-import { themeLight, themeDark } from './theme/theme';
-
-// 4.- components
+// 2.- components
 import Spinner from "./layauts/spinner/Spinner";
 
 const Navbar = lazy(async () => await import('./main/navbar'));
@@ -33,23 +25,13 @@ const GlobalStyle = createGlobalStyle`
 
 function App(): JSX.Element {
 
-    const dispatch = useDispatch();
-    const { isDark } = useSelector<RootState, IInitState>(state => state.theme);
-
-    useEffect(() => {
-
-        const getLS = window.localStorage.getItem('theme') ?? 'false';
-        const isDark = JSON.parse(getLS);
-
-        dispatch(setActiveDark(isDark));
-
-    }, []);
-
     return <Suspense fallback={<Spinner isLoading={true} />}>
 
         <GlobalStyle />
 
-        <ThemeProvider theme={isDark ? themeDark : themeLight}>
+        <Spinner />
+
+        <>
             <Navbar />
             <Banner />
             <Events />
@@ -59,7 +41,7 @@ function App(): JSX.Element {
             <Sountrack />
             <JoinUs />
             <Footer />
-        </ThemeProvider>
+        </>
     </Suspense>;
 }
 

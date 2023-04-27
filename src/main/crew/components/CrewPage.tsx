@@ -19,13 +19,17 @@ import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
 interface Props {
     isChagneImg: boolean;
+    sectionRef:  React.MutableRefObject<HTMLDivElement | null>;
 }
 
-const CrewPage = ({ isChagneImg }: Props): JSX.Element => {
+const CrewPage = ({ isChagneImg, sectionRef }: Props): JSX.Element => {
 
     const matches = useMediaQuery('(min-width: 992px)');
 
-    return <Container className="my-5 p-5">
+    return <Container
+        className="my-5 p-5"
+        ref={sectionRef}
+    >
         <Card className="row p-3 p-lg-5">
             <div className="col-12 col-lg-7">
                 <div className="d-flex">

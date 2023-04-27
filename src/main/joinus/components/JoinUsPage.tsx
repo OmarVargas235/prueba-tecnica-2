@@ -13,11 +13,15 @@ import onlineCommunication from '../../../assets/images/online-communication.png
 
 interface Props {
     onSubmit: (v: object) => Promise<void>;
+    sectionRef:  React.MutableRefObject<HTMLDivElement | null>;
 }
 
-const JoinUsPage = ({ onSubmit }: Props): JSX.Element => {
+const JoinUsPage = ({ onSubmit, sectionRef }: Props): JSX.Element => {
 
-    return <Container className="mt-5 px-5">
+    return <Container
+        className="mt-5 px-5"
+        ref={sectionRef}
+    >
         <div className="bg row px-1 px-sm-5 py-4 py-sm-5 d-flex justify-content-center align-items-center">
             <div className="col-12 col-md-6 order-1 order-md-0">
                 <div className="d-flex">

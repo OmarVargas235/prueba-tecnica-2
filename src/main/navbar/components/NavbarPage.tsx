@@ -5,7 +5,7 @@ import OptionsPage from './OptionsPage';
 // 3.- estilos
 import { Container } from "../styled";
 
-// 4.- iconos
+// 4.- assets
 import { ReactComponent as Logo } from '../../../assets/icons/logo.svg';
 import { ReactComponent as Hamburger } from '../../../assets/icons/hamburger.svg';
 
