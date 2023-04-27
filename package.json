@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://OmarVargas235.github.io/prueba-tecnica-2",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
@@ -16,7 +15,6 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "^18.15.11",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
