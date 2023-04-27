@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://OmarVargas235.github.io/prueba-tecnica-2",
+  "homepage": "https://OmarVargas235.github.io/prueba-tecnica-2",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",

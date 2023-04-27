@@ -12,4 +12,5 @@ export default defineConfig({
             },
         }),
     ],
+    base: 'https://OmarVargas235.github.io/prueba-tecnica-2'
 })
