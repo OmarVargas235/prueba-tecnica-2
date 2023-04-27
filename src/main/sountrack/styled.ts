@@ -12,6 +12,8 @@ export const Container = styled.section`
     
     .img {
         width: 100%;
+        z-index: 1;
+        position: relative;
     }
 
     .text1 {
@@ -25,9 +27,21 @@ export const Container = styled.section`
     }
 
     .text1, .text2 {
+        z-index: 1;
+        position: relative;
+        
         @media (max-width: 568px) {
             font-size: 20px;
         }
+    }
+
+    .bg {
+        background-color: #E4E4E4;
+        width: 100%;
+        height: 80px;
+        position: absolute;
+        z-index: 0;
+        top: 0;
     }
 `;
 

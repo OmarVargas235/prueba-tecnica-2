@@ -1,12 +1,14 @@
 
 // 2.- componets
 import { Text } from "../../../layauts/Text";
+import { Divider } from "../../../layauts/Divider";
 import Button from "../../../layauts/button/Button";
 
 // 3.- estilos
 import { Container, Card } from "../styled";
 
 // 4.- assets
+import img3 from '../../../assets/images/img3.jpg';
 import img4 from '../../../assets/images/img4.jpg';
 import { ReactComponent as Group } from '../../../assets/icons/group_FILL0.svg';
 import { ReactComponent as GroupPerson } from '../../../assets/icons/group_person.svg';
@@ -15,11 +17,15 @@ import { ReactComponent as Sentiment } from '../../../assets/icons/sentiment.svg
 // 5.- hooks
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
-const CrewPage = (): JSX.Element => {
+interface Props {
+    isChagneImg: boolean;
+}
+
+const CrewPage = ({ isChagneImg }: Props): JSX.Element => {
 
     const matches = useMediaQuery('(min-width: 992px)');
 
-    return <Container className="mt-5 p-5">
+    return <Container className="my-5 p-5">
         <Card className="row p-3 p-lg-5">
             <div className="col-12 col-lg-7">
                 <div className="d-flex">
@@ -52,7 +58,11 @@ const CrewPage = (): JSX.Element => {
 
             {
                 matches ? <div className="col-lg-5 d-lg-flex align-items-center">
-                    <img src={img4} alt="img4" />
+                    {
+                        isChagneImg
+                        ? <img src={img4} alt="img4" />
+                        : <img src={img3} alt="img3" />
+                    }
                 </div> : null
             }
 
@@ -93,9 +103,15 @@ const CrewPage = (): JSX.Element => {
 
         {
             !matches ? <div className="col-12 d-flex justify-content-center align-items-center mt-4">
-                <img src={img4} alt="img4" />
+                {
+                    isChagneImg
+                    ? <img src={img4} alt="img4" />
+                    : <img src={img3} alt="img3" />
+                }
             </div> : null
         }
+
+        <Divider className="position-absolute divider" />
     </Container>;
 }
 

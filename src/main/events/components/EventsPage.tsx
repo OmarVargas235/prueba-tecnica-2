@@ -1,10 +1,11 @@
 
 // 2.- componets
 import { Text } from "../../../layauts/Text";
+import { Divider } from "../../../layauts/Divider";
 import Button from "../../../layauts/button/Button";
 
 // 3.- estilos
-import { Container, Card } from "../styled";
+import { Container, Card, Mask } from "../styled";
 
 // 4.- assets
 import { ReactComponent as LogoOrange } from '../../../assets/icons/logo_orange.svg';
@@ -14,10 +15,18 @@ import img3 from '../../../assets/images/img3.jpg';
 import img4 from '../../../assets/images/img4.jpg';
 
 // 5.- hooks
+import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
 const EventsPage = (): JSX.Element => {
 
-    return <Container className="mt-5 px-5">
+    const matches = useMediaQuery('(max-width: 576px)');
+    const matches2 = useMediaQuery('(max-width: 992px)');
+
+    return <Container className="pt-5 px-5 position-relative">
+        {
+            matches ? null : <Mask className="position-absolute"></Mask>
+        }
+
         <div className="w-100 text-center mb-5">
             <LogoOrange />
             <Text
@@ -78,6 +87,10 @@ const EventsPage = (): JSX.Element => {
                 className="text-center"
             >{"Let's have fun, join us in our events. Find out more here"}</Text>
         </div>
+        
+        {
+            matches2 ? null : <Divider className="position-absolute divider" />
+        }
     </Container>;
 }
 

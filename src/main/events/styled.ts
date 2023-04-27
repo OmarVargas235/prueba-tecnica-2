@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+    .divider {
+        bottom: -90px;
+        height: 12%;
+    }
+
+    @media (max-width: 576px) {
+        background-color: #F2F2F2;
+    }
 `;
 
 export const Card = styled.div`
@@ -29,4 +37,14 @@ export const Card = styled.div`
     .text3 {
         top: 40%;
     }
+`;
+
+export const Mask = styled.div`
+    background-color: #F1F1F1;
+    width: 50%;
+    height: 350px;
+    border-top-left-radius: 160px;
+    border-bottom-left-radius: 160px;
+    right: 0;
+    top: calc(50% - 150px);
 `;

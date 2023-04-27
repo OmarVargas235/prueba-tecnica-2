@@ -13,6 +13,9 @@ import { ReactComponent as LogoOrange } from '../../../assets/icons/logo_orange.
 const MemoriesPage = (): JSX.Element => {
 
     return <Container className="pt-5 pb-2 px-5">
+
+        <div className="py-5"></div>
+
         <div className="w-100 text-center mb-5">
             <LogoOrange />
 

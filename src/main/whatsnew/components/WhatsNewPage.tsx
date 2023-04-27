@@ -1,6 +1,7 @@
 
 // 2.- componets
 import { Text } from "../../../layauts/Text";
+import { Divider } from "../../../layauts/Divider";
 import Button from "../../../layauts/button/Button";
 
 // 3.- estilos
@@ -14,7 +15,7 @@ import { contentCards } from "../utils";
 
 const WhatsNewPage = (): JSX.Element => {
 
-    return <Container className="mt-5 p-5">
+    return <Container className="p-5 position-relative">
         <div className="w-100 text-center mb-5">
             <LogoOrange />
             
@@ -106,6 +107,8 @@ const WhatsNewPage = (): JSX.Element => {
         <div className="w-100 d-flex justify-content-center">
             <Button>Find out more</Button>
         </div>
+
+        <Divider className="position-absolute divider" />
     </Container>;
 }
 

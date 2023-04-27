@@ -3,7 +3,8 @@
 import { Text } from "../../../layauts/Text";
 
 // 3.- estilos
-import { Container, ContainerVideo, DividerVertical, ContainerMessage, ButtonIcon } from "../styled";
+import { Container, ContainerVideo, ContainerMessage, ButtonIcon } from "../styled";
+import { Divider } from "../../../layauts/Divider";
 
 // 4.- assets
 import videodesktop from '../../../assets/videos/video_banner.mp4';
@@ -15,7 +16,12 @@ import { ReactComponent as Favorite } from '../../../assets/icons/favorite.svg';
 // 5.- hooks
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
-const BannerPage = (): JSX.Element => {
+interface Props {
+    changeButton: boolean;
+    setChangeButton: (v: boolean) => void;
+}
+
+const BannerPage = ({ changeButton, setChangeButton }: Props): JSX.Element => {
 
     const matches = useMediaQuery('(min-width: 575px)');
 
@@ -34,7 +40,7 @@ const BannerPage = (): JSX.Element => {
             matches ? <Grupo971 className="position-absolute group971" /> : null
         }
 
-        <DividerVertical className="position-absolute" />
+        <Divider className="position-absolute" />
 
         {
             matches ? <ContainerMessage className="position-absolute">
@@ -43,14 +49,16 @@ const BannerPage = (): JSX.Element => {
         }
 
         <ButtonIcon
-            className="d-flex align-items-center position-absolute"
+            className="d-flex align-items-center position-absolute pointer"
             matches={matches}
+            onClick={() => setChangeButton(!changeButton)}
+            color={ changeButton ? '#FF7E54' : '#5AD3DF'}
         >
             <div className="container-icon mr-2">
                 <Favorite />
             </div>
 
-            <Text className="mr-3" weight="bold">Join us</Text>
+            <Text className="mr-3" weight="bold">{changeButton ? 'YAY!' : 'Join us'}</Text>
         </ButtonIcon>
     </Container>;
 }

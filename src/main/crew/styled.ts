@@ -4,6 +4,15 @@ export const Container = styled.section`
     background-color: #F5F5F5;
     position: relative;
 
+    .divider {
+        bottom: -80px;
+        height: 10%;
+
+        @media (max-width: 576px) {
+            height: 7%;
+        }
+    }
+
     .container-card {
         background-color: white;
         border-radius: 30px;

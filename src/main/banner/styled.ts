@@ -17,16 +17,6 @@ export const ContainerVideo = styled.section`
     }
 `;
 
-export const DividerVertical = styled.div`
-    background-color: #FF7E54;
-    width: 5px;
-    height: 18%;
-    bottom: 0;
-    left: calc(50% - 2.5px);
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-`;
-
 export const ContainerMessage = styled.div`
     width: 60px;
     height: 60px;
@@ -58,7 +48,7 @@ export const ContainerMessage = styled.div`
     }
 `;
 
-export const ButtonIcon = styled.div<{ matches: boolean; }>`
+export const ButtonIcon = styled.div<{ matches: boolean; color: string; }>`
     bottom: 22%;
     left: ${props => props.matches ? '75%' : 'calc(50% - 61px)'};
     background-color: white;
@@ -70,7 +60,7 @@ export const ButtonIcon = styled.div<{ matches: boolean; }>`
     }
     
     .container-icon {
-        background-color: #5AD3DF;
+        background-color: ${props => props.color};
         border-radius: 50%;
         width: 40px;
         height: 40px;

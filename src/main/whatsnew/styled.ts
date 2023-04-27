@@ -37,6 +37,19 @@ export const Container = styled.section`
         color: #07407B;
         top: 85%;
     }
+
+    .divider {
+        bottom: -110px;
+        height: 15%;
+
+        @media (max-width: 768px) {
+            height: 13%;
+        }
+
+        @media (max-width: 576px) {
+            display: none;
+        }
+    }
 `;
 
 export const Date = styled.div`

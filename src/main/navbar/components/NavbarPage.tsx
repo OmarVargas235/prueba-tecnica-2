@@ -30,7 +30,7 @@ const NavbarPage = ({ setIsOpen }: Props): JSX.Element => {
                 matches
                 ?
                     <>
-                        <Logo className='logo mr-5' />
+                        <Logo className='logo mr-0 mr-xl-5' />
                         <OptionsPage />
                     </>
                 : null

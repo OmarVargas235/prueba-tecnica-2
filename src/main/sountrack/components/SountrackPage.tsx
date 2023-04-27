@@ -13,11 +13,21 @@ import { ReactComponent as Arrow } from '../../../assets/icons/arrow.svg';
 import { ReactComponent as Spotify } from '../../../assets/icons/spotify.svg';
 import { ReactComponent as SharingShare } from '../../../assets/icons/sharing_share.svg';
 
+// 5.- hooks
+import { useMediaQuery } from '../../../hooks/useMediaQuery';
+
 const SountrackPage = (): JSX.Element => {
 
-    return <Container className="pt-5 pt-lg-0 px-2 pr-lg-5 d-flex flex-column flex-lg-row align-items-center">
+    const matches = useMediaQuery('(min-width: 991px)');
+
+    return <Container className="pt-5 pt-lg-0 pr-2 pr-lg-5 d-flex flex-column flex-lg-row align-items-center position-relative">
+        {
+            matches ?  <div className="bg"></div> : null
+        }
+
         <div className="position-relative col-12 col-lg-8 order-1 order-lg-0">
             <img src={newmanSountrack} alt="newmanSountrack" className="img" />
+            
             <Text
                 className="position-absolute text1 text-center"
                 color="white"
@@ -32,8 +42,8 @@ const SountrackPage = (): JSX.Element => {
                 weight="bold"
             >Sountrack</Text>
         </div>
-
-        <ContainerPlayer className="p-0 col-12 col-lg-4 d-flex flex-column justify-content-center">
+        
+        <ContainerPlayer className="p-0 col-12 col-lg-4 d-flex flex-column justify-content-center mt-5">
             <div className="header row">
                 <div className="col col-4 position-relative d-flex align-items-center">
                     <ImgPlayer src={album} alt="album" />
@@ -72,6 +82,7 @@ const SountrackPage = (): JSX.Element => {
                     [
                         { n: 3, title: 'This is Amazing grace', subtitle: 'Phil Wickman', min: '4', second: '39' },
                         { n: 5, title: 'This is Amazing grace', subtitle: 'Phil Wickman', min: '4', second: '39' },
+                        { n: 6, title: 'This is Amazing grace', subtitle: 'Phil Wickman', min: '4', second: '39' },
                         { n: 6, title: 'This is Amazing grace', subtitle: 'Phil Wickman', min: '4', second: '39' },
                     ].map((v, index) => (
                         <div

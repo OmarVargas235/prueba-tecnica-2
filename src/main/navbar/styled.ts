@@ -2,6 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.nav`
     background-color: #002D63;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    opacity: .9;
+
+    p {
+        color: white;
+    }
 
     .logo {
         width: 200px;
@@ -52,9 +61,17 @@ export const ContainerIcon = styled.div`
 export const Menu = styled.div`
     background-color: #204D83;
     width: 30%;
-    min-height: 100vh;
     position: fixed;
     right: 0;
+    z-index: 999;
+    opacity: .9;
+    margin-top: 82px;
+    height: calc(100vh - 82px);
+    overflow-y: scroll;
+
+    p {
+        color: white;
+    }
 
     .btn {
         @media (max-width: 500px) {
@@ -73,5 +90,20 @@ export const Menu = styled.div`
 
     @media (max-width: 340px) {
         width: 55%;
+    }
+`;
+
+export const Option = styled.div`
+    cursor: pointer;
+
+    @media (max-width: 1000px) {
+        width: 100%;
+        padding: 10px 20px;
+        text-align: center;
+        transition: background-color .2s ease-in-out;
+    
+        &:hover {
+            background-color: rgba(0, 0, 0, .8);
+        }
     }
 `;
